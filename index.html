@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator using javascript</title>
+    <link rel="stylesheet" href="stylecalc.css">
+
+
+<style>
+
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+#Calculatorbox {
+    background-color: rgb(255, 250, 250);
+    border: 2px rgb(255, 165, 165) solid;
+    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    flex-wrap: nowrap;
+    align-content: center;
+    flex-shrink: 0;
+    box-shadow: 10px 15px 20px rgb(255, 164, 164);
+}
+
+body {
+    background-image: url("teddy01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+
+.card-heder {
+    background-color: rgb(253, 176, 176);
+    text-align: center;
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body {
+    padding: 40px 25px;
+}
+
+.card-footer {
+    background-color: #fcb3c1;
+    padding: 18px 0;
+    text-align: center;
+    text-size-adjust: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-body input {
+    padding: 6px;
+    border-radius: 5px;
+}
+
+
+.card-body button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 6px 10px;
+    background-color: rgb(255, 226, 226);
+    width: 180px;
+}
+
+#lovedata {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 6px 10px;
+    background-color: rgb(255, 194, 230);
+    width: 100px;
+}
+
+@media (max-width : 1024px) {
+    #Calculatorbox {
+        width: 50%;
+    }
+}
+
+@media (max-width : 850px){
+    
+    .card-body input{
+        width:60% ;
+        margin-left: 10px;
+
+    }
+}
+
+@media (max-width : 760px) {
+    #Calculatorbox {
+        width: 55%;
+    } 
+}
+
+@media (max-width : 620px) {
+    #Calculatorbox {
+        width: 70%;
+    }
+    .card-body input{
+        width:70%;
+        margin-left: 10px;
+    }
+
+    .card-body button {
+        width: 50%;
+    }
+}
+
+@media (max-width : 440px) {
+    #Calculatorbox {
+        width: 85%;
+    }
+}
+</style>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="Calculatorbox">
+            <div class="card-heder">Love Calculator</div>
+            <div class="card-body">
+                <form class="form-inline">
+                    <div class="form-grou">
+                        <input type="text" placeholder="Your name" id="yourname">
+                    </div>
+                    <div>+ </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your love name" id="lovename">
+                    </div>
+                </form>
+
+                <div class="button" onclick="checkloveper()">
+                    <button>click here</button>
+                </div>
+                <div>
+                    <input type="text" name="" id="lovedata" placeholder="lovepercentage">
+
+                </div>
+            </div>
+            <div class="card-footer">God Bless Youh.....</div>
+
+        </div>
+    </div>
+
+    <script>
+
+
+        function checkloveper() {
+            var yourname = document.getElementById('yourname').value;
+            var lovename = document.getElementById('lovename').value;
+
+            if (yourname == "") {
+                alert('please enter your name');
+            }
+
+            else if (yourname.length <= 2) {
+                alert('minimun length is 3')
+            }
+
+            else if (!isNaN(yourname)) {
+                alert('numbers are not allowd');
+            }
+
+            else if (lovename == "") {
+                alert('please enter your name');
+            }
+
+            else if (lovename.length <= 2) {
+                alert('minimun length is 3')
+            }
+
+            else if (!isNaN(lovename)) {
+                alert('numbers are not allowd');
+            }
+
+            else {
+                lovedata = Math.random() * 100;
+                lovedataa = Math.floor(lovedata);
+                document.getElementById('lovedata').value = lovedataa + "%";
+            }
+        }
+    </script>
+</body>
+
+</html>
